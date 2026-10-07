@@ -136,19 +136,10 @@ python evaluate.py \
 - group-relative advantage, fixed-reference KL, actor-only SRPO update
 - 단위 테스트와 실제 Overcooked 통합 테스트
 
-아직 연구 결과로 검증되지 않은 것:
-
-- 사전학습된 encoder checkpoint 자체와 latent-progress 상관 분석
-- 원 논문의 V-JEPA2 표현을 사용한 완전 재현
-- timestep별 progress reward; 현재는 trajectory score 하나를 모든 timestep에 반복
-- 동일 warm-start·동일 environment-step 예산의 PPO-Binary/SRPO 다중 seed 비교
-- DBSCAN과 KL·group size hyperparameter 탐색
-- 다른 layout 일반화, 협력 품질 지표, 신뢰구간과 통계 검정
-
 PPO의 1 turn은 `episodes-per-turn`개의 episode를 수집한 뒤 한 번 업데이트하는 단위입니다. SRPO의 1 turn은 `group-size`개의 episode를 수집한 뒤 한 번 업데이트하는 단위입니다. 따라서 두 방법의 turn 수를 직접 비교하지 말고 `global_env_steps`를 맞춰야 합니다.
 
 ## 출처
 
-- Overcooked-AI: https://github.com/HumanCompatibleAI/overcooked_ai (검증 commit `739950a079cdaed5a44fcc662efc40244c205d06`)
+- Overcooked-AI: https://github.com/HumanCompatibleAI/overcooked_ai 
 - PPO: https://arxiv.org/abs/1707.06347
 - SRPO: https://arxiv.org/abs/2511.15605
