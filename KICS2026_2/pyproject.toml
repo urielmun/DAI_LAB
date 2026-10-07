@@ -1,0 +1,6 @@
+[tool.pytest.ini_options]
+addopts = "-ra"
+markers = [
+  "integration: requires the overcooked_ai package",
+]
+testpaths = ["tests"]
